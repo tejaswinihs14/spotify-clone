@@ -3,6 +3,7 @@ export const initialState = {
     playlist: [],
     playing: false,
     item: null,
+    token: null,
 };
 
 
@@ -11,10 +12,17 @@ console.log(action);
 
 switch(action.type) {
     case 'SET_USER':
-        return{
+        return {
             ...state,
-            user: action.user
-        }
+            user: action.user,
+        };
+
+        case 'SET_TOKEN':
+            return{
+                ...state,
+                token: action.token,
+            }
+
         default:
             return state;
 }
